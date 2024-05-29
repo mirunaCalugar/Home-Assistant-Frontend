@@ -6,6 +6,10 @@
   height: 40vmin;
   pointer-events: none;
 }
+.p {
+  font-family: "Lucida Console";
+  font-size: medium;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -14,7 +18,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1f1f4d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +26,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  height: 100%;
 }
 
 .App-link {
@@ -35,4 +40,230 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* Navbar.css */
+
+.navbar {
+  background-color: #4b61d0; /* echivalentul clasei bg-blue-500 din Tailwind CSS */
+  color: white;
+  padding: 1rem 1rem; /* mărim padding-ul pentru a face navbarul mai înalt */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 2rem; /* mărim font-size-ul pentru text */
+  font-weight: 600; /* echivalentul clasei font-semibold */
+  font-family: "Lucida Console";
+  text-align: left;
+  margin-left: 1rem;
+}
+.smart-home-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30rem;
+  height: 30rem;
+}
+.func-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 10rem;
+}
+.div1 {
+  width: 23%;
+  height: 100%;
+  background-color: #4b61d0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row; /* Așează elementele pe coloane */
+  justify-content: center; /* Centrează elementele vertical */
+  align-items: center; /* Centrează elementele orizontal */
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  align-items: end;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #9fccfa;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2em;
+  width: 2em;
+  inset: 0;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked + .slider {
+  background: #1b1b47;
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #1b1b47;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.6em);
+}
+.electricity-icon {
+  width: 50%; /* Ajustează dimensiunea după preferințe */
+  height: 90%;
+}
+.thermometer-icon {
+  width: 30%;
+  height: 70%;
+}
+
+.form {
+  --width-of-input: 200px;
+  --border-height: 1px;
+  --border-before-color: rgba(221, 221, 221, 0.39);
+  --border-after-color: #5891ff;
+  --input-hovered-color: #4985e01f;
+  position: relative;
+  width: var(--width-of-input);
+}
+/* styling of Input */
+.input {
+  color: #fff;
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+}
+/* styling of animated border */
+.input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+}
+/* Hover on Input */
+input:hover {
+  background: var(--input-hovered-color);
+}
+
+input:focus {
+  outline: none;
+}
+/* here is code of animated border */
+input:focus ~ .input-border {
+  width: 100%;
+}
+/* === if you want to do animated border on typing === */
+/* remove input:focus code and uncomment below code */
+/* input:valid ~ .input-border{
+   width: 100%;
+ } */
+.divmesagge {
+  flex-direction: row;
+  display: flex;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  background-color: #171717;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 0.6rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+button span:not(:nth-child(6)) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  width: 30px;
+  background-color: #4b61d0;
+  border-radius: 50%;
+  transition: 0.6s ease;
+}
+
+button span:nth-child(6) {
+  position: relative;
+}
+
+button span:nth-child(1) {
+  transform: translate(-3.3em, -4em);
+}
+
+button span:nth-child(2) {
+  transform: translate(-6em, 1.3em);
+}
+
+button span:nth-child(3) {
+  transform: translate(-0.2em, 1.8em);
+}
+
+button span:nth-child(4) {
+  transform: translate(3.5em, 1.4em);
+}
+
+button span:nth-child(5) {
+  transform: translate(3.5em, -3.8em);
+}
+
+button:hover span:not(:nth-child(6)) {
+  transform: translate(-50%, -50%) scale(4);
+  transition: 1.5s ease;
+}
+
+.message-container {
+  display: flex;
+  font-family: "Lucida Console";
+  height: auto;
+}
+
+.div2 {
+  display: flex;
+  width: 70%;
+  height: auto;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2rem;
 }
